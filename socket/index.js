@@ -1,17 +1,14 @@
 const app = require('express')();
 const httpServer = require('http').createServer(app);
-const cors = require('cors');
-const io = require('socket.io')(httpServer, {
-  cors: {
-    origin: '*',
-    methods: ["GET", "POST"]
-  }
-});
+// const cors = require('cors');
+// const io = require('socket.io')(httpServer, {
+//   cors: {
+//     origin: '*',
+//     methods: ["GET", "POST"]
+//   }
+// });
 
 const port = process.env.PORT || 4000;
-app.use(cors({
-  origin: '*'
-}));
 
 //const httpServer = require('http').createServer(app);
 // httpServer.listen(80)
@@ -36,5 +33,5 @@ module.exports = (io) => {
 
   })
 
-  httpServer.listen(port, () => console.log(`listening on port: ${port}`));
+  // httpServer.listen(port, () => console.log(`listening on port: ${port}`));
 }
