@@ -3,16 +3,14 @@
 /**
  * Module dependencies.
  */
-
 var app = require('../app');
-var { app, io } = require('../app');  
+var { app, io } = require('../app');
 var debug = require('debug')('server:server');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
-
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -33,7 +31,7 @@ server.on('listening', onListening);
 /**
  * Normalize a port into a number, string, or false.
  */
- io.attach(server);   
+io.attach(server);
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
@@ -59,12 +57,9 @@ function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
   }
-
   var bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
